@@ -4,8 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-django = "==2.1"
+django = "==2.0.3"
 djangorestframework = "*"
+django-suit = "*"
 
 [requires]
 python_version = "3.5"
