@@ -64,4 +64,4 @@ class Order(models.Model):
     status = models.IntegerField(null=False)
 
     def __str__(self):
-        return "{} - {}".format(self.status)
+        return "{} - {}".format(self.status, self.quantity)
