@@ -18,15 +18,23 @@ using [gunicorn](http://gunicorn.org/) as defined by `entrypoint` in
 long as it listens for web traffic on port `$PORT` and is declared in
 [`requirements.txt`](requirements.txt).
 
+## Preliminaries
+
+First, verify your python3 version
+
+    $ python3 --version
+
+if no version defined, then you need to install it. See (https://djangoforbeginners.com/initial-setup/) as an example.
+
 ## How this was created
 
-This project was created using standard Django commands:
+This project was created using standard Django commands and pipenv:
 
-    $ virtualenv env
-    $ source env/bin/activate
-    $ pip install Django==2.0.3
-    $ pip install djangorestframework
-    $ pip freeze > requirements.txt
+    $ pip3 install pipenv
+    $ pipenv shell
+    $ pipenv install Django==2.0.3
+    $ pipenv install djangorestframework
+    $ pipenv install django-suit
     $ python manage.py makemigrations
     $ python manage.py migrate
     $ python manage.py runserver
