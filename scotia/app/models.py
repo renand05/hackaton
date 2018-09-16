@@ -24,9 +24,11 @@ class Product(models.Model):
     active = models.IntegerField(null=False)
     # expiration date
     expiration_date = models.DateField(max_length=255, null=False)
+    # name
+    name = models.CharField(max_length=255, null=False)
 
     def __str__(self):
-        return "{} - {}".format(self.price, self.ratio, self.points, self.active, self.expiration_date)
+        return "{} - {}".format(self.price, self.ratio, self.points, self.active, self.expiration_date, self.name)
 
 class Customer(models.Model):
     # user name
@@ -38,7 +40,7 @@ class Customer(models.Model):
         return "{} - {}".format(self.name, self.email)
 
 class Point(models.Model):
-    user_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     # numer of points
     quantity = models.FloatField(max_length=255, null=False)
     # expiration date
@@ -48,7 +50,7 @@ class Point(models.Model):
         return "{} - {}".format(self.quantity, self.expiration_date)
 
 class Stock(models.Model):
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     # number of elements
     quantity = models.FloatField(max_length=255, null=False)
 
@@ -56,12 +58,12 @@ class Stock(models.Model):
         return "{} - {}".format(self.quantity)
 
 class Order(models.Model):
-    user_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer, models.SET_NULL, blank=True, null=True)
+    product = models.ForeignKey(Product, models.SET_NULL, blank=True, null=True)
     # quantity on the order
     quantity = models.IntegerField(null=False)
     # order status
     status = models.IntegerField(null=False)
 
     def __str__(self):
-        return "{} - {}".format(self.status)
+        return "{} - {}".format(self.status, self.quantity)
