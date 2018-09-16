@@ -1,12 +1,7 @@
 # Django app for Scotia Bank Hackaton
 
-[![Open in Cloud Shell][shell_img]][shell_link]
-
-[shell_img]: http://gstatic.com/cloudssh/images/open-btn.png
-[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/GoogleCloudPlatform/python-docs-samples&page=editor&open_in_editor=appengine/flexible/hello_world_django/README.md
-
-This is a basic hello world [Django](https://www.djangoproject.com/) example
-for [Google App Engine Flexible Environment](https://cloud.google.com/appengine).
+This is a basic application [Django - Python](https://www.djangoproject.com/) example
+for [Google App Engine Flexible Environment](https://cloud.google.com/appengine) to administrate a providers inventory.
 
 ## Running locally
 
@@ -35,10 +30,6 @@ This project was created using standard Django commands:
     $ python manage.py makemigrations
     $ python manage.py migrate
     $ python manage.py runserver
-
-Then, we added a simple view in `hellworld.views`, added the app to
-`project_name.settings.INSTALLED_APPS`, and finally added a URL rule to
-`project_name.urls`.
 
 In order to deploy to Google App Engine, we created a simple
 [`app.yaml`](app.yaml).
