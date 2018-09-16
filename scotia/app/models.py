@@ -28,7 +28,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255, null=False)
 
     def __str__(self):
-        return "{} - {}".format(self.price, self.ratio, self.points, self.active, self.expiration_date, self.name)
+        return "{} - {}".format(self.name, self.price, self.ratio, self.points, self.active, self.expiration_date)
 
 class Customer(models.Model):
     # user name

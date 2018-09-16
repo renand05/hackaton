@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'suit',
-    'django_faker',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,9 +69,6 @@ TEMPLATES = [
         },
     },
 ]
-
-FAKER_LOCALE = None     # settings.LANGUAGE_CODE is loaded
-FAKER_PROVIDERS = None  # faker.DEFAULT_PROVIDERS is loaded (all)
 
 # Django Suit configuration example
 SUIT_CONFIG = {
